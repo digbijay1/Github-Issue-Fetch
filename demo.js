@@ -30,10 +30,6 @@ function FetchApi() {
   useEffect(() => {
     getIssues();
   },[]);
-  const pageCount= Math.ceil(user.length/usersPerPage)
-  const changePage=({selected})=>{
-   setPageNumber(selected)
-  }
   return (
     <div>
       {/* {user.items.map((value)=>{
@@ -48,20 +44,7 @@ function FetchApi() {
         //     return <li>{value.title}</li>;
         //   })}
         // </>
-        <>
-        {displayUsers}
-        <ReactPaginate
-        previousLabel={"Previous"}
-        nextLabel={"Next"}
-        pageCount={pageCount}
-        onPageChange={changePage}
-        containerClassName={"paginationBttns"}
-        previousLinkClassName={"previousBttn"}
-        nextLinkClassName={"nextBttn"}
-        disabledClassName={"paginationDisabled"}
-        activeClassName={"paginationActive"}
-        />
-        </>
+        displayUsers
       )}
       
     </div>
